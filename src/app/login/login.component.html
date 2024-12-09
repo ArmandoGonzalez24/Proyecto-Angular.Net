@@ -1,0 +1,18 @@
+<h2>Iniciar sesión</h2>
+
+<form (ngSubmit)="onLogin()" #loginForm="ngForm">
+  <label for="username" class="form-label">Usuario: </label>
+  <input type="text" id="username" name="username" class="form-control" [(ngModel)]="username" required minlength="3">
+
+  <label for="password" class="form-label">Contraseña: </label>
+  <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" required
+    minlength="5">
+
+  <div class="alert alert-danger" role="alert" *ngIf="loginFailed">
+    Credenciales incorrectas
+  </div>
+
+
+  <button type="submit" class="btn btn-primary mt-3" [disabled]="!loginForm.valid">Iniciar sesión</button>
+  <p>Todavía no tenés una cuenta? Registrate <a routerLink="/register">acá</a></p>
+</form>

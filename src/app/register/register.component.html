@@ -1,0 +1,44 @@
+<h2>Registro de usuario</h2>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <label for="username" class="form-label">Usuario: </label>
+  <input type="text" id="username" name="username" class="form-control" formControlName="username">
+
+  <div class="text-danger"
+    *ngIf="registerForm.controls['username'].touched && registerForm.controls['username']?.errors?.['required']">
+    Este campo es obligatorio.
+  </div>
+  <div class="text-danger"
+    *ngIf="registerForm.controls['username'].touched && registerForm.controls['username']?.errors?.['minlength']">
+    Debe tener al menos 5 caracteres.
+  </div>
+
+  <label for="password" class="form-label">Contraseña: </label>
+  <input type="password" id="password" name="password" class="form-control" formControlName="password">
+
+  <div class="text-danger"
+    *ngIf="registerForm.controls['password'].touched && registerForm.controls['password']?.errors?.['required']">
+    Este campo es obligatorio.
+  </div>
+  <div class="text-danger"
+    *ngIf="registerForm.controls['password'].touched && registerForm.controls['password']?.errors?.['minlength']">
+    Debe tener al menos 5 caracteres.
+  </div>
+
+  <label for="password" class="form-label">Repetir Contraseña: </label>
+  <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+    formControlName="confirmPassword">
+
+  <div class="text-danger"
+    *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.controls['confirmPassword']?.errors?.['required']">
+    Este campo es obligatorio.
+  </div>
+  <div class="text-danger"
+    *ngIf="registerForm.controls['confirmPassword'].touched && registerForm?.errors?.['mismatch']">
+    Las contraseñas ingresadas no coinciden
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-3" [disabled]="!registerForm.valid">Registrarme!</button>
+  <p>Ya tenés una cuenta? Iniciá sesión <a routerLink="/login">acá</a></p>
+
+</form>

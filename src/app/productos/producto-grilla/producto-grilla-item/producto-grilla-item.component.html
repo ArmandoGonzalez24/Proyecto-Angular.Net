@@ -1,0 +1,29 @@
+<div class="col">
+  <div class="card h-100">
+    <img [attr.src]="producto.imageUrl" class="card-img-top producto-img" alt="..."
+      *ngIf="producto.imageUrl; else productoSinImagen">
+    <ng-template #productoSinImagen>
+      <img src="assets/images/sin-foto.jpg" class="card-img-top producto-img" alt="...">
+    </ng-template>
+    <div class="card-body">
+      <h5 class="card-title">{{ producto.name }}</h5>
+      <p class="text-end">{{producto.price | currency}}</p>
+    </div>
+    <div class="card-footer ">
+      <button class="btn btn-primary w-100" (click)="agregarAlCarrito(producto)"
+        *ngIf="!estoyEnCarrito; else mostrarEstoyEnCarrito">
+        <fa-icon [icon]="faCartShopping"></fa-icon>
+        Agregar al Carrito
+      </button>
+      <ng-template #mostrarEstoyEnCarrito>
+        <button class="btn btn-success w-80" disabled>
+          Hay {{ cantidad }} en el carrito
+        </button>
+        <button class="btn btn-danger w-20" (click)="quitarDelCarrito(producto)">
+          <fa-icon [icon]="faTrash"></fa-icon>
+          Quitar del Carrito
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</div>

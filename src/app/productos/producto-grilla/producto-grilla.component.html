@@ -1,0 +1,8 @@
+<div *ngIf="productos && productos.length > 0">
+  <app-producto-search [productos]="productos"
+    (productosEncontrados)="aplicarFiltroProductos($event)"></app-producto-search>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-5 g-4">
+    <app-producto-grilla-item [producto]="producto" *ngFor="let producto of filteredProductos">
+    </app-producto-grilla-item>
+  </div>
+</div>

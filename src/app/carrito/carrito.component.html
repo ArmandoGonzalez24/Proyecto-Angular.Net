@@ -1,0 +1,42 @@
+<h2>Estás por llevarte estos productos</h2>
+
+<table class="table table-sm" *ngIf="items?.length; else carritoVacio">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.producto.name }}</td>
+      <td>{{ item.cantidad }}</td>
+      <td>{{ item.producto.price | currency }}</td>
+      <td>{{ item.cantidad * item.producto.price | currency }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Total</th>
+      <th colspan="2">{{ items.length}} items</th>
+      <th>{{ getTotal() | currency }}</th>
+    </tr>
+</table>
+
+<ng-template #carritoVacio>
+  <div class="alert alert-info" role="alert">No hay productos en el carrito</div>
+</ng-template>
+
+<button class="btn btn-outline-secondary" *ngIf="items.length > 0" (click)="onVaciarCarrito()">
+  <fa-icon [icon]="faTrash"></fa-icon>
+  Vaciar carrito
+</button>
+
+<button class="btn btn-outline-primary" (click)="onPagar()">
+  <fa-icon [icon]="faCreditCard"></fa-icon>
+  Ir a Pagar</button>
+
+<div id="walletBrick_container">
+</div>

@@ -1,0 +1,15 @@
+<div class="mb-2">
+  <input type="text" class="form-control" placeholder="¿Qué estás buscando?" [(ngModel)]="searchText"
+    (input)="onSearchTextChange()">
+</div>
+<div class="mb-3">
+  <label class="text-muted">También podés filtrar por categorías: &nbsp;</label>
+  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group"
+    *ngIf="categorias && categorias.length > 0">
+    <ng-template ngFor let-categoria [ngForOf]="categorias">
+      <input type="checkbox" class="btn-check" id="btncheck{{categoria.id}}" autocomplete="off"
+        (change)="onCategoriaChange(categoria)" [checked]="isSelected(categoria)">
+      <label class="btn btn-sm btn-secondary" for="btncheck{{categoria.id}}">{{categoria.name}}</label>
+    </ng-template>
+  </div>
+</div>

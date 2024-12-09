@@ -1,0 +1,47 @@
+<a class="btn btn-secondary" [routerLink]="['/home']">Volver</a>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Nombre</label>
+    <input type="text" class="form-control" id="name" formControlName="name">
+    <div class="alert alert-danger" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      El nombre es requerido
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Precio</label>
+    <input type="number" class="form-control" id="price" formControlName="price">
+    <div class="alert alert-danger" *ngIf="form.get('price')?.invalid && form.get('price')?.touched">
+      El precio es requerido
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="categoryId">Categoría</label>
+    <select class="form-control" id="categoryId" formControlName="categoryId">
+      <option value="">Seleccione una categoría</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="score">Valoración</label>
+    <bar-rating formControlName="score" [rate]="form.get('score')?.value" max="5"></bar-rating>
+  </div>
+
+  <div class="form-group">
+    <label for="imageUrl">URL de la imagen</label>
+    <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
+    <img [src]="form.get('imageUrl')?.value" class="img-fluid" alt="Responsive image"
+      *ngIf="form.get('imageUrl')?.value; else sinImagen" />
+    <ng-template #sinImagen>
+      <div class="alert alert-info">
+        No hay imagen
+      </div>
+    </ng-template>
+  </div>
+
+  <br />
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Guardar</button>
+</form>

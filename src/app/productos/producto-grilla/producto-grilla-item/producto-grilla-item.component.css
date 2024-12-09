@@ -1,0 +1,6 @@
+.producto-img {
+  width: 100%; /* Ajusta al ancho del contenedor */
+  height: 200px; /* O el alto deseado */
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+  border-radius: 5px; /* Opcional, para esquinas redondeadas */
+}
