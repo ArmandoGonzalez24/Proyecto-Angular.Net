@@ -6,6 +6,9 @@ import { ProductoDetailComponent } from './productos/producto-detail/producto-de
 import { ProductoUpdateComponent } from './productos/producto-update/producto-update.component';
 import { ProductoListComponent } from './productos/producto-list/producto-list.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component'; // Importar el componente
+import { ContactoComponent } from './contacto/contacto.component'; // Importar el componente
+
 import { RegisterComponent } from './register/register.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
@@ -15,6 +18,9 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'quienes-somos', component: QuienesSomosComponent }, // Agregar la ruta de Quiénes Somos
+  { path: 'contacto', component: ContactoComponent }, // Agregar la ruta de Contacto
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'productos',

@@ -8,4 +8,6 @@ import { ProductoGrillaComponent } from '../productos/producto-grilla/producto-g
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  message = "¡Bienvenido a nuestra librería de artículos escolares!";
+}
