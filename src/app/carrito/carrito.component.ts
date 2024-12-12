@@ -20,10 +20,15 @@ declare global {
   styleUrl: './carrito.component.css',
 })
 export class CarritoComponent implements OnInit {
+finalizarCompra() {
+throw new Error('Method not implemented.');
+
+}
   faCreditCard = faCreditCard;
   faTrash = faTrash;
 
   items: ICarritoItem[] = [];
+productos: any;
 
   constructor(private carritoService: CarritoService) {}
 
@@ -40,6 +45,7 @@ export class CarritoComponent implements OnInit {
   onVaciarCarrito(): void {
     this.carritoService.vaciarCarrito();
   }
+  
 
   onPagar(): void {
     console.log('loading MercadoPago');

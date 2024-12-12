@@ -9,5 +9,5 @@ import { TopnavComponent } from './topnav/topnav.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'integracion-dotnet-angular';
+  title = 'Libreria Aula Store';
 }
