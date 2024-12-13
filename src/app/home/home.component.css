@@ -1,0 +1,31 @@
+.hero-section {
+    background-color: #ecf0f1;
+    text-align: center;
+    padding: 60px;
+    border-radius: 10px;
+  }
+  
+  .hero-section h2 {
+    font-size: 36px;
+    color: #2c3e50;
+  }
+  
+  .hero-section p {
+    font-size: 20px;
+    color: #7f8c8d;
+  }
+  
+  .hero-section button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .hero-section button:hover {
+    background-color: #2980b9;
+  }
+  
