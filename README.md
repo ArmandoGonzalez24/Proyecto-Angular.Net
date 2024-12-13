@@ -1,93 +1,127 @@
+Proyecto Final: Plataforma de Venta de Productos
+Descripción General
+El objetivo de este proyecto es desarrollar una plataforma de venta de productos que combine funcionalidades de backend utilizando .NET y frontend con Angular. Este proyecto tiene como meta aplicar y consolidar los conocimientos adquiridos durante el curso.
 
-![Polo IT Corrientes](https://www.poloitcorrientes.com.ar/assets/images/polo-it.png)
-## Talentos Digitales
 
 
-## Trabajo Final Integrador: Desarrollo de un Sitio de Venta de Productos
+Descripción del Proyecto
+Este proyecto consiste en crear una plataforma de venta en línea que permita a los administradores gestionar productos y categorías, y a los usuarios finales ver y comprar productos. El backend está desarrollado en .NET y el frontend en Angular, con un enfoque en prácticas colaborativas y de calidad.
 
-### Objetivo General
-Desarrollar un sitio de venta de productos que integre funcionalidades de backend utilizando .NET y frontend utilizando Angular, aplicando los conceptos aprendidos durante el curso.
+Requisitos del Proyecto
+Back Office de Administración
+Gestión de Roles de Usuario:
 
----
+Administrador (admin): Permite crear, editar y eliminar productos y categorías.
 
-## Trabajo en Grupos
-- Los trabajos podrán ser realizados en grupos de **3 o 4 personas**.
-- Cada miembro del grupo debe participar activamente, contribuyendo al proyecto a través de **commits** en el/los repositorio/s.
+Usuario (user): Permite visualizar y editar productos y categorías, pero no puede crear ni eliminar.
 
----
+Manejo de Productos y Categorías:
 
-## Requerimientos Obligatorios
+Funcionalidad para crear, editar y eliminar productos y categorías (limitado a administradores).
 
-### 1. Back Office de Administración (Dashboard para Administradores)
-- **Roles de Usuarios:**
-  - **Rol `admin`:** puede **crear**, **editar** y **eliminar** productos y categorías.
-  - **Rol `user`:** puede **visualizar** y **editar** productos y categorías, pero **no** puede crear ni eliminar productos o categorías.
-- **Gestión de Productos y Categorías:**
-  - Desde el back office se debe permitir:
-    - Crear, editar y eliminar productos (solo para rol `admin`).
-    - Crear, editar y eliminar categorías (solo para rol `admin`).
-    - Visualizar y editar productos y categorías (para ambos roles).
-- **Gestión de Ventas:**
-  - Crear API endpoints que permitan registrar y visualizar las ventas en el backend.
+Los usuarios pueden ver y editar productos y categorías, pero sin permisos de eliminación o creación.
 
----
+Registro de Ventas:
 
-### 2. Frontend Público (Acceso para Usuarios Finales)
-- **Visualización y Selección de Productos:**
-  - Los usuarios finales podrán navegar por los productos disponibles sin necesidad de registrarse.
-  - Los productos deben estar organizados por categorías.
-  - Cada producto debe mostrar:
-    - Nombre
-    - Descripción breve
-    - Precio
-    - Imagen principal
-    - Puntuación de los usuarios
-- **Carrito de Compra:**
-  - El usuario podrá:
-    - Agregar productos al carrito especificando la cantidad deseada.
-    - Modificar la cantidad de productos en el carrito.
-    - Eliminar productos del carrito.
-  - Al finalizar la compra, el carrito debe vaciarse automáticamente, permitiendo al usuario iniciar una nueva compra desde cero.
-- **Registro de Ventas:**
-  - Al finalizar la compra, se registrará la venta en el backend con la siguiente información:
-    - ID de la venta.
-    - ID, cantidad y valor unitario de cada producto.
-  - El usuario recibirá un mensaje de confirmación:  
-    `"Hemos registrado tu venta con el ID xxxx y te contactaremos a la brevedad. Podrás utilizar este código para realizar el seguimiento de tu compra."`  
-    *(donde xxxx es el ID de la venta registrada en el backend).*
-- **Diseño Responsivo:**
-  - El diseño debe seguir el enfoque **Mobile First** para garantizar una buena experiencia de usuario (UIX).
+Implementación de API endpoints para registrar y visualizar ventas en el backend. : en proceso
 
----
+Frontend Público
+Visualización y Navegación de Productos:  en proceso
 
-## Puntos Opcionales (No Obligatorios para Aprobar)
+Los usuarios pueden navegar por productos sin necesidad de registro.
 
-### Back Office:
-1. **Gestión de Imágenes:**
-   - Permitir agregar varias imágenes a cada producto.
-2. **Actualización de Inventario:**
-   - Implementar un sistema para actualizar el inventario, descontando del stock inicial la cantidad vendida en cada transacción.
+Los productos están organizados en categorías.
 
-### Frontend Público:
-1. **Ordenamiento de Productos:**
-   - Permitir que los usuarios ordenen los productos por:
-     - Precio
-     - Puntuación (rating).
-2. **Uso de Librerías de Terceros:**
-   - Integrar librerías externas para funcionalidades adicionales (ejemplo: carruseles de imágenes, diseño de tablas, etc.).
-3. **Integración de Pasarela de Pago:**
-   - Implementar Mercadopago como pasarela de pago para simular transacciones.
+Cada producto muestra su nombre, breve descripción, precio, imagen y puntuación de usuarios.
 
----
+Carrito de Compra:
 
-## Entregables
-1.	**Enlaces a los repositorios de GitHub** donde se encuentre el código fuente del proyecto completo y se refleje el historial de commits de cada integrante del equipo.
-2.	Una breve presentación que explique el diseño de la arquitectura y las decisiones tomadas durante el desarrollo del proyecto. Utilizaremos esta presentación para la defensa del trabajo.
----
+Los usuarios pueden agregar productos al carrito especificando la cantidad.
 
-## Evaluación
-Se valorará especialmente la correcta implementación de las funcionalidades requeridas, la calidad del código, el diseño responsivo, la UIX, y la estructura modular y escalable del proyecto. Los puntos opcionales sumarán valor a la calificación final.
+Funcionalidades para modificar las cantidades y eliminar productos del carrito.
 
----
+El carrito se vacía automáticamente tras finalizar la compra.
 
-¡Éxitos! 😊
+Confirmación de Venta: en proceso
+
+Al finalizar la compra, se registra la venta en el backend con la siguiente información: ID de la venta, ID de cada producto, cantidad y valor unitario.
+
+Se muestra un mensaje de confirmación al usuario con el ID de la venta.
+
+Diseño Adaptable:
+
+La plataforma debe ser responsiva, priorizando la experiencia en dispositivos móviles (Mobile First).
+
+Características Adicionales
+Gestión de Imágenes:
+
+Permitir agregar múltiples imágenes a cada producto.
+
+Actualización de Inventario:
+
+Implementar un sistema de inventario que descuente el stock tras cada venta.
+
+Ordenamiento de Productos:
+
+Opciones para que los usuarios ordenen productos por precio o puntuación.
+
+Integración de Librerías Externas:
+
+Utilizar librerías de terceros para funcionalidades adicionales como carruseles de imágenes.
+
+Pasarela de Pago:
+
+Integrar Mercadopago para simular transacciones de pago.
+
+Instalación y Configuración
+Clonar el repositorio:
+
+bash
+git clone https://github.com/ArmandoGonzalez24/Proyecto-Angular.Net/.git
+Instalar dependencias del backend:
+
+bash
+cd backend
+dotnet restore
+Configurar la base de datos:
+
+Configurar la cadena de conexión en appsettings.json.
+
+Ejecutar migraciones:
+
+bash
+dotnet ef database update
+Iniciar el servidor backend:
+
+bash
+dotnet run
+Instalar dependencias del frontend:
+
+bash
+cd frontend
+npm install
+Iniciar la aplicación Angular:
+
+bash
+ng serve
+Uso
+Accede a http://localhost:4200 para utilizar la aplicación frontend.
+
+Interactúa con la API del backend en http://localhost:5287/swagger/index
+
+Contribuciones
+Las contribuciones al proyecto son bienvenidas. Sigue estos pasos para contribuir:
+
+Hacer Fork del repositorio.
+
+Crear una nueva rama:
+
+bash
+git checkout -b mi-nueva-funcionalidad
+Realizar los cambios y hacer commits.
+
+Enviar tus cambios:
+
+bash
+git push origin mi-nueva-funcionalidad
+Crear un Pull Request para revisión.
